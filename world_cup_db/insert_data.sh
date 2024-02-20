@@ -17,7 +17,7 @@ do
       continue
     fi
 
-    # Gheck if given team is already exist
+    # Check if given team is already exist
     TEAM_ID=$($PSQL "SELECT team_id from teams WHERE name='$WINNER'")
 
     # If not found
@@ -34,7 +34,7 @@ do
     # Check if the team is already exist
     TEAM_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$OPPONENT'")
 
-    # if not found
+    # If not found
     if [[ -z $TEAM_ID ]]
     then
       # Insert team
@@ -45,7 +45,7 @@ do
       fi
     fi
 
-    # Fint out the team id of given winner and opponent
+    # Find out the team id of given winner and opponent
     WINNER_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$WINNER'")
     OPPONENT_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$OPPONENT'")
     
